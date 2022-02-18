@@ -30,14 +30,14 @@ def delete(request, list_id):
     return redirect('home')
 
 
-def cross_off(request, list_id):        # request is compulsory in argument
+def cross_off(request, list_id):        
     item = List.objects.get(pk=list_id)
     item.completed = True
     item.save()
     return redirect('home')
 
 
-def uncross(request, list_id):           # request is compulsory in argument and should be passes as parameter or error
+def uncross(request, list_id):           
     item = List.objects.get(pk=list_id)
     item.completed = False
     item.save()
